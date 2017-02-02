@@ -1,2 +1,2 @@
-# DatabaseAccess
-A simple script written in Python to manipulate Databases stored locally or remotely.
+# PLAYWITHPYTHON
+Simple scripts to get myself well aquainted with Python
