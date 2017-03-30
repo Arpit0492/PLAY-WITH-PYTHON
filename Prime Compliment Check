@@ -1,0 +1,65 @@
+'''
+Ash is new to programming and hence he needs your help in writing a function which could verify whether two numbers are prime complement of each other or not. Number A is prime complement of number B, if B is the complement of the any prime number that divides A.
+
+Your task is to help Ash, by completing the function isComp(A, B) which checks whether A is prime complement of B, return type of this function is bool (true/ false).
+
+Sample test cases
+
+A=7, B=7 => false
+A=35, B=2 => true
+source : https://doselect.com/hackathon/exotel-exotel-python-programming-challenge
+'''
+
+def ones_complement(s):
+    ans=str()
+    for char in s:
+        if char=='1':
+            ans+='0'
+        else:
+            ans+='1'
+    return ans
+
+
+def decToBinary(dec):
+    i = 1
+    s = 0
+    while dec > 0:
+        rem = dec % 2
+        s += i * rem
+        dec //= 2
+        i *= 10
+    return str(s)
+
+
+def binToDec(bin):
+    n = len(bin)
+    res = 0
+    for i in range(1, n + 1):
+        res += int(bin[i - 1]) * 2 ** (n - i)
+    return res
+
+
+def primes(n):
+    primfac = []
+    d = 2
+    while d * d <= n:
+        while (n % d) == 0:
+            primfac.append(d)  # supposing you want multiple factors repeated
+            n //= d
+        d += 1
+    if n > 1:
+        primfac.append(n)
+    return set(primfac)
+
+
+def isComp(A, B):
+    for i in primes(A):
+        # print(i)
+        # # print(decToBinary(i))
+        # print(ones_complement(decToBinary(i)))
+        if binToDec(ones_complement(decToBinary(i)))==B:
+            return True
+    return False
+
+
+print(isComp(7, 7))
