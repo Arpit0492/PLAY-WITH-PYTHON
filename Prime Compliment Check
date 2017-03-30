@@ -1,7 +1,8 @@
 '''
-Ash is new to programming and hence he needs your help in writing a function which could verify whether two numbers are prime complement of each other or not. Number A is prime complement of number B, if B is the complement of the any prime number that divides A.
-
-Your task is to help Ash, by completing the function isComp(A, B) which checks whether A is prime complement of B, return type of this function is bool (true/ false).
+Ash is new to programming and hence he needs your help in writing a function which could verify whether 
+two numbers are prime complement of each other or not. Number A is prime complement of number B, if B is 
+the complement of the any prime number that divides A. Your task is to help Ash, by completing the function 
+isComp(A, B) which checks whether A is prime complement of B, return type of this function is bool (true/ false).
 
 Sample test cases
 
