@@ -1,0 +1,29 @@
+'''
+Given an array of numbers, find number of combinations which sum to a target value.
+
+'''
+
+def subset_sum(numbers, target, partial, ans):
+    s = sum(partial)
+
+    # check if the partial sum is equals to target
+    if s == target:
+        # print "sum(%s)=%s" % (partial, target)
+        ans.append(1)
+    if s >= target:
+        return ans
+        # if we reach the number why bother to continue
+
+    for i in range(len(numbers)):
+        n = numbers[i]
+        remaining = numbers[i+1:]
+        subset_sum(remaining, target, partial + [n],ans)
+    return ans
+
+N, T = [int(x) for x in input().strip().split(' ')]
+
+A = [int(x) for x in input().strip().split(' ')]
+partial = []
+ans = []
+print(len(subset_sum(A, T, partial, ans)))
+
