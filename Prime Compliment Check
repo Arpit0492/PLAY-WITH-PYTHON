@@ -63,4 +63,4 @@ def isComp(A, B):
     return False
 
 
-print(isComp(7, 7))
+#print(isComp(7, 7))
